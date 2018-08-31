@@ -1,0 +1,16 @@
+declare
+a number;
+xyz exception;
+pragma exception_init(xyz, -20007);
+
+begin
+a:=:a;
+
+if(a<18) then
+raise_application_error(-20007,'you are not allowed to vote');
+end if;
+DBMS_OUTPUT.PUT_LINE(a);
+exception
+when xyz then
+DBMS_OUTPUT.PUT_LINE(SQLERRM);
+end

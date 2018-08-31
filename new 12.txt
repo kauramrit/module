@@ -1,0 +1,13 @@
+declare
+a number;
+
+begin
+a:=:a;
+if(a<18) then
+raise_application_error(-20007,'you are not allowed to vote');
+end if;
+DBMS_OUTPUT.PUT_LINE(a);
+exception
+when others then
+DBMS_OUTPUT.PUT_LINE(SQLERRM);
+end

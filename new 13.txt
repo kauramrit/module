@@ -1,0 +1,11 @@
+declare      
+deptartment_no dept.deptno%type;
+child_found exception;
+pragma exception_init(child_found,-02292);
+begin
+deptartment_no:=:dno;
+delete from emp where deptno=deptartment_no;
+exception
+when child_found then
+dbms_output.put_line('child record found');  
+end
